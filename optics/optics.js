@@ -1,22 +1,12 @@
 let cnv;
-let ASlider;
-let LSlider;
-
+let ASlider, LSlider, DIAM,inch, lightS;
+let AB, BC, a, b, c1, c2, cc;
 let inX1, inY1, inX2, inY2;
 
 let LV = 300;
 let ANG = 60;
 let LEN = 3;
-let DIAM;
-let AB, BC;
 let mode = 0;
-let a, b;
-let inch;
-let c1, c2;
-
-let lightS;
-
-let cc;
 
 let i_rat, i_len, i_w, i_h, i_s, i_lux, i_ang, i_mul, i_diag, i_lm;
 
@@ -54,8 +44,8 @@ function setVal(ab, bc, st) {
 
     noStroke();
     fill(164);
-    text("angle: " + i_ang + "\xB0" + "    distance: " + i_len + " m" + "    ratio: 16 : 9    area: " + i_s + "    projection coefficient: " + i_mul + "    diagonal = " + i_diag + " m", 50, 460);
-    text("light flow: " + i_lm + " lm" + "    luminosity: " + i_lux + " lm/m2", 50, 480);
+    text("angle: " + i_ang + "\xB0" + "    distance: " + i_len + " m" + "    ratio: 16 : 9    area: " + i_s + "    projection coefficient: " + i_mul + "    diagonal = " + i_diag + " m", 30, 460);
+    text("light flow: " + i_lm + " lm" + "    luminosity: " + i_lux + " lm/m2", 30, 480);
 
 }
 
@@ -77,7 +67,7 @@ function setup() {
 }
 
 function draw() {
-    background(51);
+    background(21);
 
     ANG = ASlider.value;
     LEN = LSlider.value;
@@ -241,9 +231,9 @@ function SpotResult(x) {
             noStroke();
             fill(164);
 
-            text("angle: " + ANG + "\xB0" + "    distance: " + LEN + " m" + "    shape: circle    area: " + (PI * pow(DIAM / 2, 2)).toFixed(2) + "    projection coefficient: " + (LEN / DIAM).toFixed(2) + "    diagonal = " + DIAM.toFixed(2) + " m", 50, 460);
-            text("light intensity: " + lightS + " lm" + "    luminosity: " + (lightS / (PI * (DIAM * DIAM) / 4)).toFixed(0) + " lm/m2", 50, 480);
-            
+            text("angle: " + ANG + "\xB0" + "    distance: " + LEN + " m" + "    shape: circle    area: " + (PI * pow(DIAM / 2, 2)).toFixed(2) + "    projection coefficient: " + (LEN / DIAM).toFixed(2) + "    diagonal = " + DIAM.toFixed(2) + " m", 30, 460);
+            text("light intensity: " + lightS + " lm" + "    luminosity: " + (lightS / (PI * (DIAM * DIAM) / 4)).toFixed(0) + " lm/m2", 30, 480);
+
             break;
 
         default:
@@ -263,7 +253,7 @@ function info() {
     noStroke();
     fill(196);
     textSize(12);
-    text("||||||||", 50, 50);
+    text("||||||||", 30, 50);
     if (mode < 4) {
         noStroke();
         text(parseFloat(BC.toFixed(2)) + " m", 590, height / 2 - a / 2 + 30);
